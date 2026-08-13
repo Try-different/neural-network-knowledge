@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import LSTMGatesViz from '../../components/LSTMGatesViz'
 
 export default function LSTM() {
   return (
@@ -31,6 +32,8 @@ export default function LSTM() {
         <div className="title">直觉理解</div>
         细胞状态 <code>Cₜ</code> 像一条传送带：遗忘门决定倒掉多少旧货，输入门决定装上多少新货，输出门决定取出多少展示。信息可在传送带上长期流动而不被频繁改写。
       </div>
+
+      <LSTMGatesViz />
 
       <h2>为什么能缓解梯度消失</h2>
       <p>

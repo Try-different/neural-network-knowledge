@@ -1,5 +1,6 @@
 import DocPage from '../../components/DocPage'
 import ForwardPassDemo from '../../components/ForwardPassDemo'
+import BackpropFlowViz from '../../components/BackpropFlowViz'
 
 export default function ForwardBackprop() {
   return (
@@ -72,6 +73,8 @@ W2 -= lr * dW2;  b2 -= lr * db2`}
       <p>
         当网络很深时，梯度在反向传播中会连乘多个因子。若每项绝对值都小于 1，梯度会迅速衰减到接近 0（<strong>梯度消失</strong>）；反之则可能指数放大（<strong>梯度爆炸</strong>）。这正是 ReLU、残差连接、归一化等技术要解决的核心难题。
       </p>
+
+      <BackpropFlowViz />
     </DocPage>
   )
 }

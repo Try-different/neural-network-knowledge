@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import RNNViz from '../../components/RNNViz'
 
 export default function RNN() {
   return (
@@ -27,6 +28,8 @@ export default function RNN() {
         <div className="title">展开视角</div>
         沿时间维度展开后，RNN 可看作一个深度网络——每个时间步相当于一层。因此“层数”等于序列长度，这也埋下了梯度问题的伏笔。
       </div>
+
+      <RNNViz />
 
       <h2>反向传播随时间（BPTT）</h2>
       <p>

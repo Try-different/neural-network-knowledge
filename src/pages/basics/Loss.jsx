@@ -1,4 +1,6 @@
 import DocPage from '../../components/DocPage'
+import LossViz from '../../components/LossViz'
+import SoftmaxViz from '../../components/SoftmaxViz'
 
 export default function Loss() {
   return (
@@ -26,6 +28,8 @@ export default function Loss() {
       <div className="math">L = (1/n) Σ |yᵢ − ŷᵢ|</div>
       <p>对离群点更鲁棒，但在零点不可导，收敛较慢。</p>
 
+      <LossViz />
+
       <h2>分类任务：交叉熵</h2>
       <p>
         交叉熵衡量两个概率分布的差异。预测分布越接近真实分布，交叉熵越小。
@@ -38,6 +42,8 @@ export default function Loss() {
       <h3>多类交叉熵（Categorical Cross-Entropy）</h3>
       <div className="math">L = − Σᵢ yᵢ · log ŷᵢ</div>
       <p>用于多分类，输出层配合 Softmax。由于真实标签通常是 one-hot 向量，只有正确类别的项非零。</p>
+
+      <SoftmaxViz />
 
       <h2>Softmax 与交叉熵的配合</h2>
       <p>

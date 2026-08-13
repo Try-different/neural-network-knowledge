@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import LLMViz from '../../components/LLMViz'
 
 export default function LLM() {
   return (
@@ -48,6 +49,13 @@ export default function LLM() {
         <li><strong>人类反馈强化学习（RLHF）</strong>：用人类偏好训练奖励模型，再用 PPO 等优化策略（InstructGPT, 2022）。</li>
         <li><strong>DPO</strong>等直接偏好优化方法：跳过显式奖励模型，更简洁。</li>
       </ul>
+
+      <h2>采样：温度如何影响生成</h2>
+      <p>
+        对齐后的模型仍是一个概率分布生成器。生成时通过<strong>温度（temperature）</strong>调节分布的尖锐程度，从而在「确定性」与「多样性」之间权衡：
+      </p>
+
+      <LLMViz />
 
       <div className="callout warn">
         <div className="title">未决问题</div>

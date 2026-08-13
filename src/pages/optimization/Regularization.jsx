@@ -1,5 +1,6 @@
 import DocPage from '../../components/DocPage'
 import OverfittingDemo from '../../components/OverfittingDemo'
+import DropoutViz from '../../components/DropoutViz'
 
 export default function Regularization() {
   return (
@@ -31,6 +32,8 @@ export default function Regularization() {
       <p>
         训练时按概率 <code>p</code> 随机将部分神经元输出置零，迫使网络不依赖任何单个神经元，相当于训练了一个庞大的子网络集成。推理时不dropout，但输出按 <code>(1−p)</code> 缩放（或训练时已做反向缩放）。
       </p>
+
+      <DropoutViz />
       <pre><code>{`# 训练时
 mask = (np.random.rand(*h.shape) > p) / (1 - p)  # inverted dropout
 h = h * mask

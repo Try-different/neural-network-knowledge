@@ -1,4 +1,6 @@
 import DocPage from '../../components/DocPage'
+import PositionalEncodingViz from '../../components/PositionalEncodingViz'
+import SelfAttentionViz from '../../components/SelfAttentionViz'
 
 export default function Transformer() {
   return (
@@ -26,6 +28,8 @@ export default function Transformer() {
         除以 <code>√dₖ</code> 是为了防止点积过大导致 softmax 进入饱和区、梯度消失。<strong>自注意力</strong>指 Q、K、V 均来自同一序列。
       </p>
 
+      <SelfAttentionViz />
+
       <h2>多头注意力</h2>
       <p>
         将 Q/K/V 投影到多个子空间分别做注意力，再拼接，使模型能同时关注不同位置、不同语义关系：
@@ -51,6 +55,8 @@ def attention(Q, K, V):
 # FFN：两层线性 + ReLU/GELU
 # 每个子层都接残差连接与 LayerNorm`}
       </code></pre>
+
+      <PositionalEncodingViz />
 
       <h2>为什么 Transformer 胜出</h2>
       <ul>

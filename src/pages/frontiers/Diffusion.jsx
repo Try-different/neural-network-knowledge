@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import DiffusionViz from '../../components/DiffusionViz'
 
 export default function Diffusion() {
   return (
@@ -27,6 +28,8 @@ export default function Diffusion() {
       </p>
       <div className="math">xₜ = √ᾱₜ·x₀ + √(1−ᾱₜ)·ε, &nbsp; ε ~ N(0, I)</div>
       <p>其中 <code>ᾱₜ = Π(1−βᵢ)</code>，这使得训练采样极其高效。</p>
+
+      <DiffusionViz />
 
       <h2>反向过程：学习去噪</h2>
       <p>

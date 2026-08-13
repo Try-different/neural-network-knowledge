@@ -1,5 +1,6 @@
 import DocPage from '../../components/DocPage'
 import NeuralNetworkViz from '../../components/NeuralNetworkViz'
+import XORDemo from '../../components/XORDemo'
 
 export default function Neuron() {
   return (
@@ -43,6 +44,8 @@ export default function Neuron() {
       <p>
         1969 年，Minsky 与 Papert 在《Perceptrons》一书中指出：单层感知机无法表达<strong>异或（XOR）</strong>这类线性不可分函数。这一结论一度让神经网络研究陷入低谷，直到多层网络与反向传播算法的提出才打破僵局。
       </p>
+
+      <XORDemo />
 
       <h2>多层感知机（MLP）</h2>
       <p>

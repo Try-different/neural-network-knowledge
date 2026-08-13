@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import BatchNormViz from '../../components/BatchNormViz'
 
 export default function BatchNorm() {
   return (
@@ -27,6 +28,8 @@ export default function BatchNorm() {
       <p>
         <code>γ, β</code> 是可学习参数，让网络在需要时可恢复任意分布，保证归一化不损失表达能力。
       </p>
+
+      <BatchNormViz />
 
       <h2>训练 vs 推理</h2>
       <ul>

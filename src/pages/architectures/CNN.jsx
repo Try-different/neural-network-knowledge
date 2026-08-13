@@ -1,5 +1,6 @@
 import DocPage from '../../components/DocPage'
 import ConvolutionDemo from '../../components/ConvolutionDemo'
+import PoolingDemo from '../../components/PoolingDemo'
 
 export default function CNN() {
   return (
@@ -49,6 +50,8 @@ def conv2d(x, k):
       <p>
         池化对特征图下采样，降低尺寸并带来一定平移不变性。最常用<strong>最大池化</strong>（取窗口内最大值），也有平均池化。池化无可学习参数。
       </p>
+
+      <PoolingDemo />
 
       <h2>感受野</h2>
       <p>
