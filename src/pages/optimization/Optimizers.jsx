@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import OptimizerComparison from '../../components/OptimizerComparison'
 
 export default function Optimizers() {
   return (
@@ -40,6 +41,8 @@ export default function Optimizers() {
         θ ← θ − η·m̂ₜ / (√v̂ₜ + ε)
       </div>
       <p>Adam 凭借收敛快、调参少的特点，成为深度学习最常用的优化器（默认 β₁=0.9, β₂=0.999, ε=1e-8）。</p>
+
+      <OptimizerComparison />
 
       <h2>对比速查</h2>
       <table>

@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import GradientDescentViz from '../../components/GradientDescentViz'
 
 export default function GradientDescent() {
   return (
@@ -43,6 +44,8 @@ for epoch in range(num_epochs):
         <li><strong>过小</strong>：收敛缓慢，易陷入局部最优。</li>
         <li><strong>合适</strong>：稳定下降至最小值附近。</li>
       </ul>
+
+      <GradientDescentViz />
 
       <div className="callout">
         <div className="title">学习率调度</div>

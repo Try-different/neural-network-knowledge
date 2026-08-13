@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import ConvolutionDemo from '../../components/ConvolutionDemo'
 
 export default function CNN() {
   return (
@@ -41,6 +42,8 @@ def conv2d(x, k):
             out[i, j] = np.sum(x[i:i+kh, j:j+kw] * k)
     return out`}
       </code></pre>
+
+      <ConvolutionDemo />
 
       <h2>池化层</h2>
       <p>

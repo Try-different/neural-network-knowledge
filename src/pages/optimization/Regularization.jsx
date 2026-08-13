@@ -1,4 +1,5 @@
 import DocPage from '../../components/DocPage'
+import OverfittingDemo from '../../components/OverfittingDemo'
 
 export default function Regularization() {
   return (
@@ -23,6 +24,8 @@ export default function Regularization() {
         <li><strong>L2（权重衰减）</strong>：<code>R = ½‖W‖²</code>，权重整体缩小，是最常用的正则项。</li>
         <li><strong>L1</strong>：<code>R = ‖W‖₁</code>，倾向于产生稀疏权重（部分参数归零），自带特征选择效果。</li>
       </ul>
+
+      <OverfittingDemo />
 
       <h2>Dropout</h2>
       <p>
