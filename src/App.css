@@ -463,128 +463,108 @@
   background: linear-gradient(180deg, var(--accent), var(--accent-2));
 }
 
-/* ============ 模块卡片升级 ============ */
-.module-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
-  gap: 18px;
+/* ============ 模块行式布局 ============ */
+.module-rows {
   margin-top: 16px;
-}
-.module-card {
-  position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 200px;
-  padding: 24px 24px 22px 28px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--surface);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  overflow: hidden;
 }
-/* 左侧彩色装饰条 */
-.module-card::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--accent), var(--accent-2));
-  opacity: 0.5;
-  transition: opacity 0.25s;
+.module-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
 }
-.module-card:hover::before {
-  opacity: 1;
+.module-row:first-child {
+  border-top: 1px solid var(--border);
 }
-.mc-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.25s;
-  pointer-events: none;
+.module-row:hover {
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
 }
-.module-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px color-mix(in srgb, var(--accent) 12%, rgba(0,0,0,0.08));
-  text-decoration: none;
-}
-.module-card:hover .mc-glow {
-  opacity: 1;
-}
-.module-card:hover .mc-icon {
-  transform: scale(1.08) rotate(-3deg);
-  box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 30%, transparent);
-}
-.module-card .mc-head {
+
+/* 左侧：图标 + 标题描述 */
+.mr-left {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 12px;
+  flex-shrink: 0;
+  width: 280px;
+  text-decoration: none;
+  transition: all 0.2s;
 }
-.module-card .mc-icon {
-  width: 46px;
-  height: 46px;
+.mr-left:hover {
+  text-decoration: none;
+}
+.mr-left:hover .mr-icon {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.mr-left:hover .mr-title {
+  color: var(--accent);
+}
+.mr-icon {
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   display: grid;
   place-items: center;
-  font-size: 22px;
-  background: linear-gradient(135deg, var(--accent-soft), color-mix(in srgb, var(--accent-2) 15%, transparent));
+  background: linear-gradient(135deg, var(--accent-soft), color-mix(in srgb, var(--accent-2) 12%, transparent));
   color: var(--accent);
-  transition: all 0.25s;
   flex-shrink: 0;
   border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  transition: all 0.25s;
 }
-.module-card .mc-icon svg {
+.mr-icon svg {
   width: 24px;
   height: 24px;
 }
-.module-card .mc-title-group {
-  flex: 1;
+.mr-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
-.module-card .mc-title {
-  font-size: 1.15rem;
+.mr-title {
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-h);
   letter-spacing: -0.01em;
+  transition: color 0.2s;
 }
-.module-card .mc-count {
-  font-size: 0.78rem;
+.mr-desc {
+  font-size: 0.82rem;
   color: var(--text-muted);
-  margin-top: 2px;
+  line-height: 1.4;
 }
-.module-card .mc-desc {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  margin: 0 0 14px;
-  line-height: 1.6;
-  min-height: 44px;
-}
-.module-card .mc-tags {
+
+/* 右侧：知识点标签 */
+.mr-topics {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: auto;
+  gap: 8px;
+  flex: 1;
 }
-.module-card .mc-tags span {
-  font-size: 0.76rem;
-  padding: 3px 10px;
+.mr-topic {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
   border-radius: 999px;
-  background: var(--surface-2);
-  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
   transition: all 0.15s;
+  white-space: nowrap;
 }
-.module-card:hover .mc-tags span {
-  background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+.mr-topic:hover {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  border-color: var(--accent);
   color: var(--accent);
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 /* ============ 特性卡片 ============ */
@@ -876,6 +856,16 @@
   .content { padding: 28px 20px 60px; }
   .module-grid, .feature-row, .module-index .mi-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .module-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .mr-left {
+    width: 100%;
   }
 }
 @media (max-width: 560px) {

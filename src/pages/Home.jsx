@@ -29,25 +29,25 @@ export default function Home() {
           <span className="section-bar" />
           知识模块
         </h2>
-        <div className="module-grid">
+        <div className="module-rows">
           {nav.map((g, i) => (
-            <Reveal key={g.id} delay={i * 80}>
-              <Link className="module-card" to={g.path}>
-                <div className="mc-glow" />
-                <div className="mc-head">
-                  <div className="mc-icon"><ModuleIcon id={g.id} /></div>
-                  <div className="mc-title-group">
-                    <div className="mc-title">{g.title}</div>
-                    <div className="mc-count">{g.children.length} 个知识点</div>
+            <Reveal key={g.id} delay={i * 60}>
+              <div className="module-row">
+                <Link className="mr-left" to={g.path}>
+                  <div className="mr-icon"><ModuleIcon id={g.id} /></div>
+                  <div className="mr-info">
+                    <div className="mr-title">{g.title}</div>
+                    <div className="mr-desc">{g.desc}</div>
                   </div>
-                </div>
-                <p className="mc-desc">{g.desc}</p>
-                <div className="mc-tags">
+                </Link>
+                <div className="mr-topics">
                   {g.children.map((c) => (
-                    <span key={c.path}>{c.title}</span>
+                    <Link key={c.path} className="mr-topic" to={c.path}>
+                      {c.title}
+                    </Link>
                   ))}
                 </div>
-              </Link>
+              </div>
             </Reveal>
           ))}
         </div>
