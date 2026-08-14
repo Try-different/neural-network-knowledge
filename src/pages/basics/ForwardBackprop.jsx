@@ -1,6 +1,7 @@
 import DocPage from '../../components/DocPage'
 import ForwardPassDemo from '../../components/ForwardPassDemo'
 import BackpropFlowViz from '../../components/BackpropFlowViz'
+import Term from '../../components/Term'
 
 export default function ForwardBackprop() {
   return (
@@ -29,7 +30,7 @@ export default function ForwardBackprop() {
 
       <h2>计算图与链式法则</h2>
       <p>
-        神经网络可视为一张<strong>计算图</strong>：每个节点是一次运算，边表示数据的依赖。<strong>反向传播</strong>的本质，是沿着计算图从损失出发，用<strong>链式法则</strong>逐层计算每个参数的梯度。
+        神经网络可视为一张<strong>计算图</strong>：每个节点是一次运算，边表示数据的依赖。<Term>反向传播</Term>的本质，是沿着计算图从损失出发，用<Term>链式法则</Term>逐层计算每个参数的<Term>梯度</Term>。
       </p>
       <div className="math">
         ∂L/∂W¹ = (∂L/∂ŷ) · (∂ŷ/∂z²) · (∂z²/∂a¹) · (∂a¹/∂z¹) · (∂z¹/∂W¹)

@@ -1,6 +1,7 @@
 import DocPage from '../../components/DocPage'
 import LossViz from '../../components/LossViz'
 import SoftmaxViz from '../../components/SoftmaxViz'
+import Term from '../../components/Term'
 
 export default function Loss() {
   return (
@@ -15,7 +16,7 @@ export default function Loss() {
     >
       <h2>损失函数的作用</h2>
       <p>
-        <strong>损失函数（Loss Function）</strong>量化模型预测 <code>ŷ</code> 与真实标签 <code>y</code> 之间的差距。训练的目标就是<strong>最小化</strong>训练集上的平均损失。不同任务类型对应不同的损失函数。
+        <Term>损失函数</Term>（Loss Function）量化模型预测 <code>ŷ</code> 与真实标签 <code>y</code> 之间的差距。训练的目标就是<strong>最小化</strong>训练集上的平均损失。不同任务类型对应不同的损失函数。
       </p>
 
       <h2>回归任务：MSE 与 MAE</h2>

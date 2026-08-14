@@ -1,5 +1,6 @@
 import DocPage from '../../components/DocPage'
 import GradientDescentViz from '../../components/GradientDescentViz'
+import Term from '../../components/Term'
 
 export default function GradientDescent() {
   return (
@@ -14,10 +15,10 @@ export default function GradientDescent() {
     >
       <h2>核心思想</h2>
       <p>
-        损失函数 <code>L(θ)</code> 描述了参数 <code>θ</code> 的好坏。梯度 <code>∇L</code> 指向损失上升最快的方向，那么<strong>沿负梯度方向走一小步</strong>，损失就会下降。这就是梯度下降：
+        损失函数 <code>L(θ)</code> 描述了参数 <code>θ</code> 的好坏。<Term>梯度</Term> <code>∇L</code> 指向损失上升最快的方向，那么<strong>沿负梯度方向走一小步</strong>，损失就会下降。这就是<Term>梯度下降</Term>：
       </p>
       <div className="math">θ ← θ − η · ∇L(θ)</div>
-      <p>其中 <code>η</code> 为<strong>学习率</strong>，控制每步的步长。</p>
+      <p>其中 <code>η</code> 为<Term>学习率</Term>，控制每步的步长。</p>
 
       <h2>三种变体</h2>
       <table>

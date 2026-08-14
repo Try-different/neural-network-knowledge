@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { nav } from '../data/nav'
+import DifficultyBadge from './DifficultyBadge'
 
 // 模块索引页：展示某模块下所有主题卡片
 export default function ModuleIndex({ moduleId }) {
@@ -20,6 +21,7 @@ export default function ModuleIndex({ moduleId }) {
           <Link key={c.path} className="topic-card" to={c.path}>
             <div className="num">{String(i + 1).padStart(2, '0')}</div>
             <div className="ttl">{c.title}</div>
+            <DifficultyBadge level={c.level} />
             <div className="dsc">{c.dsc}</div>
           </Link>
         ))}

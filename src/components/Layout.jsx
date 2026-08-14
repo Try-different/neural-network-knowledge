@@ -2,9 +2,11 @@ import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+import GlossaryPanel from './GlossaryPanel'
 
 export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [glossaryOpen, setGlossaryOpen] = useState(false)
   const [theme, setTheme] = useState(
     () => document.documentElement.dataset.theme || 'light'
   )
@@ -20,6 +22,7 @@ export default function Layout() {
         onMenuClick={() => setSidebarOpen((o) => !o)}
         theme={theme}
         onToggleTheme={toggleTheme}
+        onGlossaryClick={() => setGlossaryOpen(true)}
       />
       <div className="body-area">
         <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
@@ -27,6 +30,7 @@ export default function Layout() {
           <Outlet />
         </main>
       </div>
+      <GlossaryPanel open={glossaryOpen} onClose={() => setGlossaryOpen(false)} />
     </div>
   )
 }

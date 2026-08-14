@@ -1,6 +1,7 @@
 import DocPage from '../../components/DocPage'
 import OverfittingDemo from '../../components/OverfittingDemo'
 import DropoutViz from '../../components/DropoutViz'
+import Term from '../../components/Term'
 
 export default function Regularization() {
   return (
@@ -15,7 +16,7 @@ export default function Regularization() {
     >
       <h2>过拟合：训练好却不通用</h2>
       <p>
-        当模型容量过大而数据不足时，网络可能把训练集“死记硬背”下来，训练损失很低但在新数据上表现差——这就是<strong>过拟合</strong>。正则化的目标，是限制模型复杂度，使其学到<strong>可泛化</strong>的规律。
+        当模型容量过大而数据不足时，网络可能把训练集"死记硬背"下来，训练损失很低但在新数据上表现差——这就是<Term>过拟合</Term>。<Term>正则化</Term>的目标，是限制模型复杂度，使其学到<Term>泛化</Term>的规律。
       </p>
 
       <h2>L1 / L2 权重衰减</h2>

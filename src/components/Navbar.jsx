@@ -23,7 +23,7 @@ function Search() {
   )
 }
 
-export default function Navbar({ onMenuClick, theme, onToggleTheme }) {
+export default function Navbar({ onMenuClick, theme, onToggleTheme, onGlossaryClick }) {
   return (
     <header className="navbar">
       <button className="menu-toggle" onClick={onMenuClick} aria-label="切换菜单">
@@ -41,6 +41,14 @@ export default function Navbar({ onMenuClick, theme, onToggleTheme }) {
           </NavLink>
         ))}
       </nav>
+      <button
+        className="glossary-toggle"
+        onClick={onGlossaryClick}
+        aria-label="术语速查"
+        title="术语速查"
+      >
+        Ａ
+      </button>
       <button
         className="theme-toggle"
         onClick={onToggleTheme}

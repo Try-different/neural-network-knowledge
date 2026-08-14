@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { nav } from '../data/nav'
+import LearningPath from '../components/LearningPath'
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
           <Link className="ghost" to="/architectures/transformer">查看架构</Link>
         </div>
       </div>
+
+      <LearningPath />
 
       <h2>知识模块</h2>
       <div className="module-grid">

@@ -1,6 +1,7 @@
 import DocPage from '../../components/DocPage'
 import NeuralNetworkViz from '../../components/NeuralNetworkViz'
 import XORDemo from '../../components/XORDemo'
+import Term from '../../components/Term'
 
 export default function Neuron() {
   return (
@@ -23,7 +24,7 @@ export default function Neuron() {
       <div className="math">z = Σᵢ wᵢ · xᵢ + b &nbsp;&nbsp;→&nbsp;&nbsp; a = f(z)</div>
 
       <p>
-        其中 <code>xᵢ</code> 是输入，<code>wᵢ</code> 是对应的<strong>权重</strong>（衡量该输入的重要性），<code>b</code> 是<strong>偏置</strong>（调节激活阈值），<code>f</code> 是<strong>激活函数</strong>。权重和偏置就是神经网络需要从数据中学习的参数。
+        其中 <code>xᵢ</code> 是输入，<code>wᵢ</code> 是对应的<Term>权重</Term>（衡量该输入的重要性），<code>b</code> 是<Term>偏置</Term>（调节激活阈值），<code>f</code> 是<Term>激活函数</Term>。权重和偏置就是神经网络需要从数据中学习的参数。
       </p>
 
       <div className="callout">

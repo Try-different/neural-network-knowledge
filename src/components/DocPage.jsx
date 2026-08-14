@@ -1,5 +1,6 @@
 import { useLocation, Link } from 'react-router-dom'
 import { nav, flatTopics } from '../data/nav'
+import DifficultyBadge from './DifficultyBadge'
 
 // 文档页通用布局：面包屑 + 标题 + 内容 + 参考来源 + 上下页导航
 export default function DocPage({ title, meta, refs, children }) {
@@ -8,6 +9,7 @@ export default function DocPage({ title, meta, refs, children }) {
   const prev = idx > 0 ? flatTopics[idx - 1] : null
   const next = idx >= 0 && idx < flatTopics.length - 1 ? flatTopics[idx + 1] : null
   const group = nav.find((g) => g.children.some((c) => c.path === loc.pathname))
+  const current = idx >= 0 ? flatTopics[idx] : null
 
   return (
     <article className="doc-page">
@@ -22,7 +24,10 @@ export default function DocPage({ title, meta, refs, children }) {
         )}
         <span>{title}</span>
       </div>
-      <h1 className="doc-title">{title}</h1>
+      <h1 className="doc-title">
+        {title}
+        {current && <DifficultyBadge level={current.level} size="md" />}
+      </h1>
       {meta && <div className="doc-meta">{meta}</div>}
       {children}
       {refs && refs.length > 0 && (

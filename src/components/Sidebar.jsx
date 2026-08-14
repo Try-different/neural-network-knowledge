@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { nav } from '../data/nav'
+import DifficultyBadge from './DifficultyBadge'
 
 export default function Sidebar({ open, onClose }) {
   return (
@@ -16,7 +17,8 @@ export default function Sidebar({ open, onClose }) {
               to={t.path}
               className={({ isActive }) => `topic ${isActive ? 'active' : ''}`}
             >
-              {t.title}
+              <span className="topic-label">{t.title}</span>
+              <DifficultyBadge level={t.level} />
             </NavLink>
           ))}
         </div>
