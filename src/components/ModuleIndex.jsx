@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { nav } from '../data/nav'
 import DifficultyBadge from './DifficultyBadge'
+import ModuleIcon from './ModuleIcon'
 
 // 模块索引页：展示某模块下所有主题卡片
 export default function ModuleIndex({ moduleId }) {
@@ -13,7 +14,10 @@ export default function ModuleIndex({ moduleId }) {
           <span className="sep">/</span>
           <span>{g.title}</span>
         </div>
-        <h1>{g.title}</h1>
+        <h1>
+          <span className="mi-icon"><ModuleIcon id={g.id} /></span>
+          {g.title}
+        </h1>
         <p className="doc-meta">{g.desc}</p>
       </div>
       <div className="mi-grid">

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { nav } from '../data/nav'
 import DifficultyBadge from './DifficultyBadge'
+import ModuleIcon from './ModuleIcon'
 
 export default function Sidebar({ open, onClose }) {
   return (
@@ -8,7 +9,7 @@ export default function Sidebar({ open, onClose }) {
       {nav.map((g) => (
         <div className="group" key={g.id}>
           <div className="group-title">
-            <span className="ic">{g.icon}</span>
+            <span className="ic"><ModuleIcon id={g.id} /></span>
             {g.title}
           </div>
           {g.children.map((t) => (
